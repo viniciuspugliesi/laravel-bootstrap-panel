@@ -5,10 +5,10 @@
 </head>
 <body>
     <div class="app" id="app">
-        @include('includes.nav')
+        <menu-component></menu-component>
 
         <div class="page-container">
-            @include('includes.header')
+            <header-component></header-component>
 
             <main class='main-content bgc-grey-100'>
                 <div>
