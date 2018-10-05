@@ -5,6 +5,8 @@
 <meta http-equiv="Cache-Control: max-age=3600, must-revalidate" />
 <meta http-equiv="Content-Language" content="pt-br, en">
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
 <!-- FAVICON -->
 <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 

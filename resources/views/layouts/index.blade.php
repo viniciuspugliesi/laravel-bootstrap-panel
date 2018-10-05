@@ -24,6 +24,7 @@
         </div>
     </div>
 
+    @include('includes.scripts')
     @yield('js')
 </body>
 </html>
