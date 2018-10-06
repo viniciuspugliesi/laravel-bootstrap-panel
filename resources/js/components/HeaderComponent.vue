@@ -21,6 +21,41 @@
 
             <ul class="nav-right">
                 <li class="notifications dropdown">
+                    <a href="#" class="dropdown-toggle no-after" data-toggle="dropdown">
+                        <i class="fal fa-globe"></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li class="pX-20 pY-15 bdB">
+                            <i class="fal fa-globe pR-10"></i>
+                            <span class="fsz-sm fw-600 c-grey-900">Idiomas</span>
+                        </li>
+                        <li>
+                            <ul class="dropdown-menu fsz-sm languages">
+                                <li>
+                                    <a href="#" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                                        <i class="fal fa-minus mR-10"></i>
+                                        <span class="text">English</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                                        <i class="fal fa-minus mR-10"></i>
+                                        <span class="text">Spain</span>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a href="#" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                                        <i class="fal fa-check mR-10"></i>
+                                        <span class="text">Português (Brasil)</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="notifications dropdown">
                     <span class="counter bgc-red">3</span>
                     <a href="#" class="dropdown-toggle no-after" data-toggle="dropdown">
                         <i class="fal fa-bell"></i>
@@ -93,6 +128,7 @@
                         </li>
                     </ul>
                 </li>
+
                 <li class="notifications dropdown">
                     <span class="counter bgc-blue">3</span>
                     <a href="#" class="dropdown-toggle no-after" data-toggle="dropdown">
@@ -183,6 +219,7 @@
                         </li>
                     </ul>
                 </li>
+
                 <li class="profiles dropdown">
                     <a href="#" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
                         <div class="peer mR-10">
@@ -213,7 +250,7 @@
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="#" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                            <a href="/logout" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                                 <i class="c-red-500 fal fa-power-off mR-10"></i>
                                 <span class="text">Logout</span>
                             </a>

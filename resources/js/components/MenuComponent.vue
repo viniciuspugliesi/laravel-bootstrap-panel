@@ -8,17 +8,17 @@
                         <a class="sidebar-link td-n" href="#">
                             <div class="peers ai-c fxw-nw">
                                 <div class="peer">
-                                    <div class="logo">
-                                        <img src="/images/logo.png" alt="">
+                                    <div class="logo text-center">
+                                        <img class="mT-20" src="/images/logo.png" alt="" style="width: 55px;">
                                     </div>
                                 </div>
                                 <div class="peer peer-greed">
-                                    <h5 class="lh-1 mB-0 logo-text">Adminator</h5>
+                                    <h5 class="lh-1 mB-0 logo-text">Administrador</h5>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="peer">
+                    <div class="peer mL-10">
                         <div class="mobile-toggle">
                             <a href="#" class="td-n" @click.prevent="sidebarToggle()">
                                 <i class="fal fa-arrow-circle-left"></i>

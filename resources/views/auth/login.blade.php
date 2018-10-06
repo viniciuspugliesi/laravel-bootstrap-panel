@@ -48,13 +48,17 @@
                             </div>
                         </div>
                         <div class="peer">
-                            <button class="btn btn-primary">REALIZAR LOGIN</button>
+                            <button class="btn btn-primary text-uppercase">Realizar login</button>
                         </div>
                     </div>
                 </div>
             </form>
 
             <div class="mT-70">
+                <div class="text-center mB-30">
+                    <a href="/esqueceu-sua-senha">Esqueceu sua senha? Clique aqui para recupera-lá</a>
+                </div>
+
                 <hr>
 
                 <ul class="list-inline text-center mT-40">

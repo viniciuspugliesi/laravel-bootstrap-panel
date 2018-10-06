@@ -66,6 +66,12 @@
                 }
             }
 
+            .languages {
+                .active {
+                    background: $md-black-10;
+                }
+            }
+
             .notifications {
                 position: relative;
 

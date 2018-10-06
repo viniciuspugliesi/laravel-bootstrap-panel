@@ -13,8 +13,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/**
+ * ------------------------------------------------------------------------
+ *  Visitor Routes
+ * ------------------------------------------------------------------------
+ */
+Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function(){
+    /**
+     * --------------------------------------------------------------------
+     *  Login Routes
+     * --------------------------------------------------------------------
+     */
+    Route::get('/login', 'LoginController@index');
+    Route::post('/login', 'LoginController@login');
+    Route::get('/logout', 'LoginController@logout');
+
+    /**
+     * --------------------------------------------------------------------
+     *  Forget Password Routes
+     * --------------------------------------------------------------------
+     */
+    Route::post('/esqueceu-sua-senha', 'ForgotPasswordController@store');
+
+    /**
+     * --------------------------------------------------------------------
+     *  Reset Password Routes
+     * --------------------------------------------------------------------
+     */
+    Route::get('/recuperar-senha', 'ResetPasswordController@index');
+    Route::post('/recuperar-senha', 'ResetPasswordController@store');
+});
+
+
 Route::get('/', function () {
-    return view('auth.login');
-//    return view('welcome');
-//    return view('errors.500');
+    return view('welcome');
 });
