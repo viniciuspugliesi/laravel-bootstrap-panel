@@ -23,6 +23,7 @@
     "popper.js": "^1.12",
     "themify-icons": "^1.0.0",
     "vue": "^2.5.7",
-    "vue-resource": "^1.5.1"
+    "vue-resource": "^1.5.1",
+    "vuejs-datepicker": "^1.5.3"
   }
 }

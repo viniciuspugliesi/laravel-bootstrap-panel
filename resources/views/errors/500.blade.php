@@ -1,11 +1,11 @@
 @extends('layouts.clear')
 
-@section('title', '500')
+@section('title', 'Internal server error')
 
 @section('content')
     <div class='pos-a t-0 l-0 bgc-white w-100 h-100 d-f fxd-r fxw-w ai-c jc-c pos-r p-30'>
-        <div class='mR-60'>
-            <img alt='500' title="500" src='/images/500.png'/>
+        <div>
+            <img class="error-img" alt='500' title="500" src='/images/500.png'/>
         </div>
 
         <div class='d-f jc-c fxd-c'>

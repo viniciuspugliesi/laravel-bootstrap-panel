@@ -69,4 +69,44 @@ export default (function () {
     // ------------------------------------------------------
 
     $('[data-toggle="tooltip"]').tooltip();
+
+
+    // ------------------------------------------------------
+    // @Form group label
+    // ------------------------------------------------------
+
+    $(document).on('change', '.form-group-label .form-control', function() {
+        if ($(this).val() && ! $(this).hasClass('has-value')) {
+            $(this).addClass('has-value');
+        } else if (!$(this).val()) {
+            $(this).removeClass('has-value');
+        }
+    });
+
+    $('.form-group-label .form-control').each((index, el) => {
+        if ($(el).val()) {
+            $(el).addClass('has-value');
+        } else {
+            $(el).removeClass('has-value');
+        }
+    });
+
+
+    // ------------------------------------------------------
+    // @Form input password
+    // ------------------------------------------------------
+
+    $(document).on('click', '.input-password', function () {
+        let i = $(this).find('i');
+
+        if (i.hasClass('fa-eye-slash')) {
+            i.removeClass('fa-eye-slash').addClass('fa-eye');
+            $(this).parent().parent().parent().find('input').attr('type', 'text');
+        } else {
+            i.removeClass('fa-eye').addClass('fa-eye-slash');
+            $(this).parent().parent().parent().find('input').attr('type', 'password');
+        }
+
+        $(this).parent().parent().parent().find('input').focus();
+    })
 }());

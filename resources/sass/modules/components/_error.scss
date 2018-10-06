@@ -1,0 +1,8 @@
+
+.error-img {
+    max-width: 100%;
+
+    @include from($breakpoint-lg) {
+        margin-right: 60px;
+    }
+}
