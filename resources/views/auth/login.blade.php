@@ -55,16 +55,17 @@
             </form>
 
             <div class="mT-70">
-                <div class="text-center mB-30">
-                    <a href="/esqueceu-sua-senha">Esqueceu sua senha? Clique aqui para recupera-lá</a>
-                </div>
+                <ul class="list-inline text-center mB-20">
+                    <li class="list-inline-item mX-20"><a class="btn btn-outline-primary" href="/esqueceu-sua-senha">Esqueceu sua senha?</a></li>
+                    <li class="list-inline-item mX-20"><a class="btn btn-outline-primary" href="/cadastro">Criar conta</a></li>
+                </ul>
 
                 <hr>
 
-                <ul class="list-inline text-center mT-40">
-                    <li class="list-inline-item mX-10"><a href="#">Ajuda</a></li>
-                    <li class="list-inline-item mX-10"><a href="#">Privacidade</a></li>
-                    <li class="list-inline-item mX-10"><a href="#">Termos de uso</a></li>
+                <ul class="list-inline text-center mT-30">
+                    <li class="list-inline-item mX-20"><a class="btn btn-link" href="#">Ajuda</a></li>
+                    <li class="list-inline-item mX-20"><a class="btn btn-link" href="#">Privacidade</a></li>
+                    <li class="list-inline-item mX-20"><a class="btn btn-link" href="#">Termos de uso</a></li>
                 </ul>
             </div>
         </div>
