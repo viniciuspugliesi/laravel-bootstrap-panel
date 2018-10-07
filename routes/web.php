@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 /**
  * ------------------------------------------------------------------------
- *  Visitor Routes
+ *  Guest Routes
  * ------------------------------------------------------------------------
  */
 Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function(){
@@ -28,6 +28,14 @@ Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function(){
     Route::get('/login', 'LoginController@index');
     Route::post('/login', 'LoginController@login');
     Route::get('/logout', 'LoginController@logout');
+
+    /**
+     * ---------------------------------------------------------------------
+     *  Register Routes
+     * ---------------------------------------------------------------------
+     */
+    Route::get('/cadastro', 'RegisterController@index');
+    Route::post('/cadastro', 'RegisterController@store');
 
     /**
      * --------------------------------------------------------------------
