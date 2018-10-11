@@ -42,6 +42,7 @@ Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function(){
      *  Forget Password Routes
      * --------------------------------------------------------------------
      */
+    Route::get('/esqueceu-sua-senha', 'ForgotPasswordController@index');
     Route::post('/esqueceu-sua-senha', 'ForgotPasswordController@store');
 
     /**
@@ -54,6 +55,30 @@ Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function(){
 });
 
 
-Route::get('/', function () {
-    return view('welcome');
+
+/**
+ * ------------------------------------------------------------------------
+ *  Auth Routes
+ * ------------------------------------------------------------------------
+ */
+Route::group(['middleware' => 'auth'], function(){
+
+    /**
+     * --------------------------------------------------------------------
+     * Verify Email Routes
+     * --------------------------------------------------------------------
+     */
+    Route::get('/verificar-email', 'VerificationController@index');
+
+    /**
+     * --------------------------------------------------------------------
+     * Verified Email Routes
+     * --------------------------------------------------------------------
+     */
+    Route::group(['middleware' => 'verified'], function() {
+
+        Route::get('/', function () {
+            return view('welcome');
+        });
+    });
 });

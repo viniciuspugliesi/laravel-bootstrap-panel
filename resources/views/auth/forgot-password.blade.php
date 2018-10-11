@@ -1,6 +1,6 @@
 @extends('layouts.clear')
 
-@section('title', 'Login')
+@section('title', 'Esqueceu sua senha')
 
 @section('content')
     <div class="peers ai-s fxw-nw h-100vh">
@@ -13,9 +13,9 @@
                 <img class="logo-img" src="/images/logo.png" alt="Logo" title="Logo" width="200px">
             </div>
 
-            <h4 class="fw-300 c-grey-900 mT-50 mB-60">Bem vindo ao sistema. Faça login para acessa-lo.</h4>
+            <h4 class="fw-300 c-grey-900 mT-50 mB-60">Esqueceu sua senha? Informe seu email abaixo para gerar uma nova</h4>
 
-            <form action="/login" method="post">
+            <form action="/esqueceu-sua-senha" method="post">
                 @csrf
 
                 <div class="form-group form-group-label">
@@ -31,31 +31,11 @@
                     </div>
                 </div>
 
-                <div class="form-group form-group-label">
-                    <div class="input-group">
-                        <input type="password" class="form-control">
-                        <label>Insira sua senha</label>
-                        <div class="input-group-prepend">
-                            <div class="input-group-text input-password">
-                                <i class="far fa-eye-slash fa-lg"></i>
-                            </div>
-                        </div>
-                        <div class="form-line"></div>
-                    </div>
-                </div>
-
                 <div class="form-group">
                     <div class="peers ai-c jc-sb fxw-nw">
+                        <div class="peer"></div>
                         <div class="peer">
-                            <div class="checkbox checkbox-circle checkbox-info peers ai-c">
-                                <input type="checkbox" id="remember" name="remember" class="peer">
-                                <label for="remember" class="peers peer-greed js-sb ai-c">
-                                    <span class="peer peer-greed">Manter-me conectado</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="peer">
-                            <button class="btn btn-primary text-uppercase">Realizar login</button>
+                            <button class="btn btn-primary text-uppercase">Recuperar senha</button>
                         </div>
                     </div>
                 </div>
@@ -63,7 +43,7 @@
 
             <div class="mT-70">
                 <ul class="list-inline text-center mB-20">
-                    <li class="list-inline-item mX-20 mB-10"><a class="btn btn-outline-primary" href="/esqueceu-sua-senha">Esqueceu sua senha?</a></li>
+                    <li class="list-inline-item mX-20 mB-10"><a class="btn btn-outline-primary" href="/login">Lembrou a senha? Realizar login</a></li>
                     <li class="list-inline-item mX-20 mB-10"><a class="btn btn-outline-primary" href="/cadastro">Criar conta</a></li>
                 </ul>
 

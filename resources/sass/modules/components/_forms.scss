@@ -45,8 +45,7 @@
 }
 
 .checkbox input[type="checkbox"]:focus + label::before {
-    outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color;
+    outline: none;
     outline-offset: -2px;
 }
 
@@ -260,7 +259,7 @@
     display: block;
     position: relative;
     margin-top: 25px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     border-bottom: 1px solid $md-dark-text-dividers;
 
     label {
@@ -339,6 +338,10 @@
 
         &.input-password {
             cursor: pointer;
+        }
+
+        &.input-tooltip {
+            cursor: help;
         }
     }
 }

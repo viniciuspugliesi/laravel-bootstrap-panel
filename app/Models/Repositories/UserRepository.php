@@ -4,6 +4,9 @@ namespace App\Models\Repositories;
 
 use App\Models\Entities\User;
 
+/**
+ * @property User $model
+ */
 class UserRepository extends AbstractRepository
 {
     /**
@@ -14,5 +17,16 @@ class UserRepository extends AbstractRepository
     public function __construct(User $model)
     {
         $this->model = $model;
+    }
+
+    /**
+     * Check has verified email
+     *
+     * @param \App\Models\Entities\User $user
+     * @return bool
+     */
+    public function hasVerifiedEmail(User $user) : bool
+    {
+        return ! is_null($user->email_verified_at);
     }
 }

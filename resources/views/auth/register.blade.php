@@ -8,32 +8,69 @@
             <div class="bg-opacity"></div>
         </div>
 
-        <div class="col-12 col-md-4 peer pX-40 pY-90 h-100 bgc-white scrollable pos-r" style='min-width: 450px;'>
+        <div class="col-12 col-md-4 peer box-login pY-90 h-100 bgc-white scrollable pos-r">
             <div class="text-center">
                 <img class="logo-img" src="/images/logo.png" alt="Logo" title="Logo" width="200px">
             </div>
 
             <h4 class="fw-300 c-grey-900 mT-50 mB-60">Preencha os dados abaixo para realizar seu cadastro no sistema.</h4>
 
+            <div class="row">
+                <div class="col-md-12">
+                    @include('includes.messages')
+                </div>
+            </div>
+
             <form action="/cadastro" method="post">
                 @csrf
 
-                <div class="form-group form-group-label">
-                    <input type="email" class="form-control" name="email" />
-                    <label>Insira seu email</label>
-                    <div class="form-line"></div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group form-group-label">
+                            <input type="text" name="name" class="form-control">
+                            <label>Insira seu nome</label>
+                            <div class="form-line"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group form-group-label">
+                            <input type="email" name="email" class="form-control">
+                            <label>Insira seu email</label>
+                            <div class="form-line"></div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group form-group-label">
-                    <div class="input-group">
-                        <input type="password" class="form-control">
-                        <label>Insira sua senha</label>
-                        <div class="input-group-prepend">
-                            <div class="input-group-text input-password">
-                                <i class="far fa-eye-slash fa-lg"></i>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group form-group-label">
+                            <div class="input-group">
+                                <input type="password" name="password" class="form-control">
+                                <label>Insira sua senha</label>
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text input-password">
+                                        <i class="far fa-eye-slash fa-lg"></i>
+                                    </div>
+                                </div>
+                                <div class="form-line"></div>
                             </div>
                         </div>
-                        <div class="form-line"></div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group form-group-label">
+                            <div class="input-group">
+                                <input type="password_confirmation" name="password_confirmation" class="form-control">
+                                <label>Repita sua senha</label>
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text input-password">
+                                        <i class="far fa-eye-slash fa-lg"></i>
+                                    </div>
+                                </div>
+                                <div class="form-line"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -54,11 +91,7 @@
 
                 <hr>
 
-                <ul class="list-inline text-center mT-30">
-                    <li class="list-inline-item mX-20"><a class="btn btn-link" href="#">Ajuda</a></li>
-                    <li class="list-inline-item mX-20"><a class="btn btn-link" href="#">Privacidade</a></li>
-                    <li class="list-inline-item mX-20"><a class="btn btn-link" href="#">Termos de uso</a></li>
-                </ul>
+                @include('includes.helpers-list')
             </div>
         </div>
     </div>

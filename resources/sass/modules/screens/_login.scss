@@ -4,3 +4,25 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
 }
+
+.box-login {
+    padding-left: 40px;
+    padding-right: 40px;
+    min-width: 450px;
+
+    @include to($breakpoint-sm) {
+        padding-left: 20px;
+        padding-right: 20px;
+        min-width: 100%;
+    }
+
+    .helpers-list {
+        margin-left: 20px;
+        margin-right: 20px;
+
+        @include to($breakpoint-sm) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}

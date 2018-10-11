@@ -5,6 +5,9 @@ namespace App\Models\Repositories;
 use App\Models\Entities\Token;
 use Carbon\Carbon;
 
+/**
+ * @property Token $model
+ */
 class TokenRepository extends AbstractRepository
 {
     /**
