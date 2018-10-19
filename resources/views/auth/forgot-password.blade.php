@@ -8,9 +8,9 @@
             <div class="bg-opacity"></div>
         </div>
 
-        <div class="col-12 col-md-4 peer box-login pY-90 h-100 bgc-white scrollable pos-r">
+        <div class="col-12 col-md-4 peer box-login bgc-white pos-r">
             <div class="text-center">
-                <img class="logo-img" src="/images/logo.png" alt="Logo" title="Logo" width="200px">
+                <img class="logo-img" src="/images/logo.png" alt="Logo" width="200px">
             </div>
 
             <h4 class="fw-300 c-grey-900 mT-50 mB-60">Esqueceu sua senha? Informe seu email abaixo para gerar uma nova</h4>

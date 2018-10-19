@@ -1,6 +1,6 @@
 import PerfectScrollbar from 'perfect-scrollbar';
 
-export default (function () {
+export default (function() {
     // ------------------------------------------------------
     // @Window load
     // ------------------------------------------------------
@@ -102,7 +102,7 @@ export default (function () {
         // @Form input password
         // ------------------------------------------------------
 
-        $(document).on('click', '.input-password', function () {
+        $(document).on('click', '.input-password', function() {
             let i = $(this).find('i');
             let input = $(this).parent().parent().parent().find('input');
 

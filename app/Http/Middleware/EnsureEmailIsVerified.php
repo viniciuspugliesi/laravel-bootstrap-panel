@@ -34,7 +34,7 @@ class EnsureEmailIsVerified
     public function handle($request, Closure $next, $guard = null)
     {
         if (! $request->user($guard) || ! $this->user_repository->hasVerifiedEmail($request->user($guard))) {
-            return redirect('/verificar-email');
+            return redirect('/email-nao-verificado');
         }
 
         return $next($request);

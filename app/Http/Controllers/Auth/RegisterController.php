@@ -2,28 +2,26 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Events\Registered;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\RegisterRequest;
-use App\Models\Repositories\UserRepository;
-use App\Models\Repositories\TokenRepository;
+use App\Models\Services\UserService;
 
 class RegisterController extends Controller
 {
     /**
-     * @var \App\Models\Repositories\UserRepository
+     * @var \App\Models\Services\UserService
      */
-    private $user;
+    private $userService;
 
     /**
      * Make new instance of this class
      *
-     * @param \App\Models\Repositories\UserRepository $user
+     * @param \App\Models\Services\UserService $userService
      * @return void
      */
-    public function __construct(UserRepository $user)
+    public function __construct(UserService $userService)
     {
-        $this->user = $user;
+        $this->userService = $userService;
     }
 
     /**
@@ -40,16 +38,11 @@ class RegisterController extends Controller
      * Store a newly created user in storage.
      *
      * @param \App\Http\Requests\Auth\RegisterRequest $request
-     * @param \App\Models\Repositories\TokenRepository $token
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(RegisterRequest $request, TokenRepository $token)
+    public function store(RegisterRequest $request)
     {
-        $user = $this->user->create($request->only(['name', 'email', 'password']));
-
-        event(new Registered(
-            $user, $token->create(array_merge($user->toArray(), ['ref_table' => 'users', 'ref_id' => $user->id]))
-        ));
+        $this->userService->create($request);
 
         return redirect('/login')->with('success', 'Acesse seu email para ativar seu cadastro.');
     }

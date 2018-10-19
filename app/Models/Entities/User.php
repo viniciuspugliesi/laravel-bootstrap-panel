@@ -7,18 +7,26 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
+ * @property integer $id
  * @property string $name
  * @property string $email
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- * @property \Carbon\Carbon $deletead_at
- * @property \Carbon\Carbon $email_verified_at
  * @property string $password
  * @property string $remember_token
+ * @property \Carbon\Carbon $email_verified_at
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
  */
-class User extends Authenticatable
+class User extends Authenticatable implements Entity
 {
     use Notifiable, SoftDeletes;
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'users';
 
     /**
      * The attributes that should be mutated to dates.

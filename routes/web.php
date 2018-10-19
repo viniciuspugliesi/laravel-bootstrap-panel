@@ -67,6 +67,15 @@ Route::group(['namespace' => 'Auth'], function(){
      * ------------------------------------------------------------------------
      */
     Route::get('/logout', 'LoginController@logout');
+
+    /**
+     * --------------------------------------------------------------------
+     * Verify Email Routes
+     * --------------------------------------------------------------------
+     */
+    Route::get('/verificar-email', 'VerificationController@verify');
+    Route::get('/email-nao-verificado', 'VerificationController@unverified')->middleware('auth:user');
+    Route::post('/email-nao-verificado', 'VerificationController@resend')->middleware('auth:user');
 });
 
 
@@ -77,13 +86,6 @@ Route::group(['namespace' => 'Auth'], function(){
  * ------------------------------------------------------------------------
  */
 Route::group(['middleware' => 'auth:user'], function(){
-    /**
-     * --------------------------------------------------------------------
-     * Verify Email Routes
-     * --------------------------------------------------------------------
-     */
-    Route::get('/verificar-email', 'VerificationController@index')->middleware('');
-
     /**
      * ------------------------------------------------------------------------
      *  Verified Email Routes

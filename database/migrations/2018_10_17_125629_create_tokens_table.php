@@ -18,6 +18,7 @@ class CreateTokensTable extends Migration
             $table->string('token');
             $table->string('ref_table');
             $table->integer('ref_id');
+            $table->timestamp('expires_at');
             $table->timestamps();
             $table->softDeletes();
         });

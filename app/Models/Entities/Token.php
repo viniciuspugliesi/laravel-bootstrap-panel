@@ -5,12 +5,21 @@ namespace App\Models\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Token extends Model
+/**
+ * @property integer $id
+ * @property string $token
+ * @property string $ref_table
+ * @property integer $ref_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
+ */
+class Token extends Model implements Entity
 {
     use SoftDeletes;
 
     /**
-     * The attribute that should be table name.
+     * The table associated with the model.
      *
      * @var string
      */

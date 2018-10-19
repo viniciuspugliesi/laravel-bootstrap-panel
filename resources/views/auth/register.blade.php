@@ -8,9 +8,9 @@
             <div class="bg-opacity"></div>
         </div>
 
-        <div class="col-12 col-md-4 peer box-login pY-90 h-100 bgc-white scrollable pos-r">
+        <div class="col-12 col-md-4 peer box-login bgc-white pos-r">
             <div class="text-center">
-                <img class="logo-img" src="/images/logo.png" alt="Logo" title="Logo" width="200px">
+                <img class="logo-img" src="/images/logo.png" alt="Logo" width="200px">
             </div>
 
             <h4 class="fw-300 c-grey-900 mT-50 mB-60">Preencha os dados abaixo para realizar seu cadastro no sistema.</h4>
@@ -57,7 +57,7 @@
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group form-group-label">
                             <div class="input-group">
-                                <input type="password_confirmation" name="password_confirmation" class="form-control" />
+                                <input type="password" name="password_confirmation" class="form-control" />
                                 <label>Repita sua senha</label>
                                 <div class="input-group-prepend">
                                     <div class="input-group-text input-password">

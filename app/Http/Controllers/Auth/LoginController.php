@@ -3,14 +3,26 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Repositories\UserRepository;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Services\AuthService;
 use App\Http\Requests\Auth\LoginRequest;
-use App\Guards\UserGuard;
 
 class LoginController extends Controller
 {
-    use UserGuard;
+    /**
+     * @var \App\Models\Services\AuthService
+     */
+    private $authService;
+
+    /**
+     * Make new instance of this class
+     *
+     * @param \App\Models\Services\AuthService $authService
+     * @return void
+     */
+    public function __construct(AuthService $authService)
+    {
+        $this->authService = $authService;
+    }
 
     /**
      * Show login form
@@ -32,7 +44,7 @@ class LoginController extends Controller
      */
     public function login(LoginRequest $request)
     {
-        if (! Auth::guard($this->getGuard())->attempt($request->only(['email', 'password']), $request->input('remember'))) {
+        if (! $this->authService->login($request)) {
             return redirect()->back()->with('error', 'Email e senha não coincidem.');
         }
 
@@ -47,7 +59,7 @@ class LoginController extends Controller
      */
     public function logout()
     {
-        Auth::guard($this->getGuard())->logout();
+        $this->authService->logout();
 
         return redirect('/login');
     }
