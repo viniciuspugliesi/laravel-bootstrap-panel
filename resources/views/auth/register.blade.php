@@ -15,11 +15,7 @@
 
             <h4 class="fw-300 c-grey-900 mT-50 mB-60">Preencha os dados abaixo para realizar seu cadastro no sistema.</h4>
 
-            <div class="row">
-                <div class="col-md-12">
-                    @include('includes.messages')
-                </div>
-            </div>
+            @include('includes.messages')
 
             <form action="/cadastro" method="post">
                 @csrf
@@ -27,7 +23,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group form-group-label">
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="name" value="{{ old('name') }}" class="form-control" />
                             <label>Insira seu nome</label>
                             <div class="form-line"></div>
                         </div>
@@ -35,7 +31,7 @@
 
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group form-group-label">
-                            <input type="email" name="email" class="form-control">
+                            <input type="email" name="email" value="{{ old('email') }}" class="form-control" />
                             <label>Insira seu email</label>
                             <div class="form-line"></div>
                         </div>
@@ -46,7 +42,7 @@
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group form-group-label">
                             <div class="input-group">
-                                <input type="password" name="password" class="form-control">
+                                <input type="password" name="password" class="form-control" />
                                 <label>Insira sua senha</label>
                                 <div class="input-group-prepend">
                                     <div class="input-group-text input-password">
@@ -61,7 +57,7 @@
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group form-group-label">
                             <div class="input-group">
-                                <input type="password_confirmation" name="password_confirmation" class="form-control">
+                                <input type="password_confirmation" name="password_confirmation" class="form-control" />
                                 <label>Repita sua senha</label>
                                 <div class="input-group-prepend">
                                     <div class="input-group-text input-password">

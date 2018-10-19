@@ -114,7 +114,7 @@ export default (function () {
                 input.attr('type', 'password');
             }
 
-            input.focus();
+            setTimeout(() => { input.focus(); }, 100);
         });
     });
 }());

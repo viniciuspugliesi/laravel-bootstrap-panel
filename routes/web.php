@@ -16,66 +16,80 @@ use Illuminate\Support\Facades\Route;
 
 /**
  * ------------------------------------------------------------------------
- *  Guest Routes
+ *  Auth Routes
  * ------------------------------------------------------------------------
  */
-Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function(){
+Route::group(['namespace' => 'Auth'], function(){
+
     /**
-     * --------------------------------------------------------------------
-     *  Login Routes
-     * --------------------------------------------------------------------
+     * ------------------------------------------------------------------------
+     *  Guest Routes
+     * ------------------------------------------------------------------------
      */
-    Route::get('/login', 'LoginController@index');
-    Route::post('/login', 'LoginController@login');
+    Route::group(['middleware' => 'guest:user'], function() {
+
+        /**
+         * --------------------------------------------------------------------
+         *  Login Routes
+         * --------------------------------------------------------------------
+         */
+        Route::get('/login', 'LoginController@index');
+        Route::post('/login', 'LoginController@login');
+
+        /**
+         * ---------------------------------------------------------------------
+         *  Register Routes
+         * ---------------------------------------------------------------------
+         */
+        Route::get('/cadastro', 'RegisterController@index');
+        Route::post('/cadastro', 'RegisterController@store');
+
+        /**
+         * --------------------------------------------------------------------
+         *  Forget Password Routes
+         * --------------------------------------------------------------------
+         */
+        Route::get('/esqueceu-sua-senha', 'ForgotPasswordController@index');
+        Route::post('/esqueceu-sua-senha', 'ForgotPasswordController@store');
+
+        /**
+         * --------------------------------------------------------------------
+         *  Reset Password Routes
+         * --------------------------------------------------------------------
+         */
+        Route::get('/recuperar-senha', 'ResetPasswordController@index');
+        Route::post('/recuperar-senha', 'ResetPasswordController@store');
+    });
+
+    /**
+     * ------------------------------------------------------------------------
+     *  Logout Route
+     * ------------------------------------------------------------------------
+     */
     Route::get('/logout', 'LoginController@logout');
-
-    /**
-     * ---------------------------------------------------------------------
-     *  Register Routes
-     * ---------------------------------------------------------------------
-     */
-    Route::get('/cadastro', 'RegisterController@index');
-    Route::post('/cadastro', 'RegisterController@store');
-
-    /**
-     * --------------------------------------------------------------------
-     *  Forget Password Routes
-     * --------------------------------------------------------------------
-     */
-    Route::get('/esqueceu-sua-senha', 'ForgotPasswordController@index');
-    Route::post('/esqueceu-sua-senha', 'ForgotPasswordController@store');
-
-    /**
-     * --------------------------------------------------------------------
-     *  Reset Password Routes
-     * --------------------------------------------------------------------
-     */
-    Route::get('/recuperar-senha', 'ResetPasswordController@index');
-    Route::post('/recuperar-senha', 'ResetPasswordController@store');
 });
 
 
 
 /**
  * ------------------------------------------------------------------------
- *  Auth Routes
+ *  Authenticated Routes
  * ------------------------------------------------------------------------
  */
-Route::group(['middleware' => 'auth'], function(){
-
+Route::group(['middleware' => 'auth:user'], function(){
     /**
      * --------------------------------------------------------------------
      * Verify Email Routes
      * --------------------------------------------------------------------
      */
-    Route::get('/verificar-email', 'VerificationController@index');
+    Route::get('/verificar-email', 'VerificationController@index')->middleware('');
 
     /**
-     * --------------------------------------------------------------------
-     * Verified Email Routes
-     * --------------------------------------------------------------------
+     * ------------------------------------------------------------------------
+     *  Verified Email Routes
+     * ------------------------------------------------------------------------
      */
-    Route::group(['middleware' => 'verified'], function() {
+    Route::group(['middleware' => 'verified:user'], function() {
 
         Route::get('/', function () {
             return view('welcome');

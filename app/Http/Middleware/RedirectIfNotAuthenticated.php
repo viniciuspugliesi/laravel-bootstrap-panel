@@ -16,7 +16,7 @@ class RedirectIfNotAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (! $request->user() || $request->user($guard)->guest()) {
+        if (! $request->user($guard)) {
             return redirect('/login');
         }
 

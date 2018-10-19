@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'user',
         'passwords' => 'users',
     ],
 
@@ -36,12 +36,12 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+//        'web' => [
+//            'driver' => 'session',
+//            'provider' => 'users',
+//        ],
 
-        'auth' => [
+        'user' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
@@ -54,7 +54,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | User Providers
+    | UserGuard Providers
     |--------------------------------------------------------------------------
     |
     | All authentication drivers have a user provider. This defines how the

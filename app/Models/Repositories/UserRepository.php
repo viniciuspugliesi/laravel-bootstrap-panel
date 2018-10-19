@@ -29,4 +29,17 @@ class UserRepository extends AbstractRepository
     {
         return ! is_null($user->email_verified_at);
     }
+
+    /**
+     * Create new register
+     *
+     * @param array $data
+     * @return mixed
+     */
+    public function create(array $data)
+    {
+        $data['password'] = bcrypt($data['password']);
+
+        return $this->model->forceCreate($data);
+    }
 }

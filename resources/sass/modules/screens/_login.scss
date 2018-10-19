@@ -6,13 +6,13 @@
 }
 
 .box-login {
-    padding-left: 40px;
-    padding-right: 40px;
+    align-self: center;
+    padding: 10px 40px;
     min-width: 450px;
 
     @include to($breakpoint-sm) {
-        padding-left: 20px;
-        padding-right: 20px;
+        align-self: auto;
+        padding: 10px 20px;
         min-width: 100%;
     }
 

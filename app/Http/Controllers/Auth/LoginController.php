@@ -3,17 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Repositories\UserRepository;
 use Illuminate\Support\Facades\Auth;
-
-// Requests
 use App\Http\Requests\Auth\LoginRequest;
+use App\Guards\UserGuard;
 
 class LoginController extends Controller
 {
-    /**
-     * @var string
-     */
-    private $guard = 'auth';
+    use UserGuard;
 
     /**
      * Show login form
@@ -35,8 +32,8 @@ class LoginController extends Controller
      */
     public function login(LoginRequest $request)
     {
-        if (!Auth::guard($this->getGuard())->attempt($request->only(['email', 'password']))) {
-            return redirect()->back()->withError('Erro na checagem dos dados.');
+        if (! Auth::guard($this->getGuard())->attempt($request->only(['email', 'password']), $request->input('remember'))) {
+            return redirect()->back()->with('error', 'Email e senha não coincidem.');
         }
 
         return redirect('/');
@@ -53,15 +50,5 @@ class LoginController extends Controller
         Auth::guard($this->getGuard())->logout();
 
         return redirect('/login');
-    }
-
-    /**
-     * Get guard
-     *
-     * @return string
-     */
-    private function getGuard()
-    {
-        return $this->guard;
     }
 }

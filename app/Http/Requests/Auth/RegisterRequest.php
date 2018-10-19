@@ -25,9 +25,8 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name'      => 'required',
-            'email'     => 'required|unique:advertisers,email,'.$this->input('id').',id',
+            'email'     => 'required|unique:users,email,'.$this->input('id').',id',
             'password'  => 'required|confirmed',
-            'cpf'       => 'required|unique:advertisers,cpf,'.$this->input('id').',id',
         ];
     }
 
@@ -44,8 +43,6 @@ class RegisterRequest extends FormRequest
             'email.unique'       => 'O email já existe no sistema.',
             'password.required'  => 'A senha é obrigatória.',
             'password.confirmed' => 'A senha é obrigatória.',
-            'cpf.required'       => 'O CPF é obrigatório.',
-            'cpf.unique'         => 'O CPF já existe no sistema.',
         ];
     }
 }

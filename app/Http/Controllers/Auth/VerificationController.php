@@ -34,7 +34,7 @@ class VerificationController extends Controller
     public function __construct(TokenRepository $token, UserRepository $user)
     {
         $this->token = $token;
-        $this->user = $user;
+        $this->user  = $user;
     }
 
     /**
@@ -46,8 +46,8 @@ class VerificationController extends Controller
      */
     public function index(Request $request)
     {
-//        return view('auth.verify-email')->with([
-//            'token' => $request->input('token')
-//        ]);
+        return view('auth.verify-email')->with([
+            'token' => $request->input('token')
+        ]);
     }
 }
